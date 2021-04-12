@@ -1,0 +1,7 @@
+# Editor temporaries
+*.BAK
+*.bak
+*.orig
+*~
+.*.sw[po]
+
