@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Usage &#8212; Clean Test dev documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -32,25 +33,25 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="usage">
+  <section id="usage">
 <h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
 <p>Clean Test is a CMake project and as such can be integrated easily.</p>
-<div class="section" id="setup">
+<section id="setup">
 <h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
 <p>There are a number of ways how to get Clean Test.</p>
-<div class="section" id="installation">
+<section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
 <p>The quickest way to a working setup is to install a binary artifact.
-This can either be obtained from <a class="reference external" href="https://github.com/m8mble/clean-test/releases">a release</a>
+This can either be obtained from <a class="reference external" href="https://github.com/clean-test/clean-test/releases">a release</a>
 or (soon) your package manager of choice.</p>
 <p>With this no further preparation is needed.
 Feel free to skip ahead to the <a class="reference internal" href="#integration"><span class="std std-ref">integration details</span></a>.</p>
-</div>
-<div class="section" id="build">
+</section>
+<section id="build">
 <h3>Build<a class="headerlink" href="#build" title="Permalink to this headline">¶</a></h3>
 <p>Alternatively you can also build Clean Test from sources.
 Depending on your needs there are a couple of options how to do this.</p>
-<div class="section" id="standalone">
+<section id="standalone">
 <h4>Standalone<a class="headerlink" href="#standalone" title="Permalink to this headline">¶</a></h4>
 <p>Compiling Clean Test is no different from any other CMake project:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir build
@@ -60,8 +61,8 @@ cmake --build .
 cmake --install .
 </pre></div>
 </div>
-</div>
-<div class="section" id="subdirectory">
+</section>
+<section id="subdirectory">
 <h4>Subdirectory<a class="headerlink" href="#subdirectory" title="Permalink to this headline">¶</a></h4>
 <p>Some projects prefer to include forks of their dependencies.
 Assuming the Clean Test repository has been cloned to <code class="docutils literal notranslate"><span class="pre">ext/clean-test</span></code>,
@@ -71,24 +72,24 @@ this path can be included using</p>
 </div>
 <p>in your <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code>.
 That imports all targets of Clean Test.</p>
-</div>
-<div class="section" id="fetchcontent">
+</section>
+<section id="fetchcontent">
 <h4>FetchContent<a class="headerlink" href="#fetchcontent" title="Permalink to this headline">¶</a></h4>
 <p>The source of Clean Test can also be downloaded using CMake.
 This can be done using the <code class="docutils literal notranslate"><span class="pre">FetchContent</span></code> module:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">include</span><span class="p">(</span><span class="s">FetchContent</span><span class="p">)</span>
 <span class="nb">fetchcontent_declare</span><span class="p">(</span>
-  <span class="s">CleanTest</span>
-  <span class="s">GIT_REPOSITORY</span> <span class="s">https://github.com/m8mble/clean-test.git</span>
-  <span class="s">GIT_TAG</span>        <span class="s">main</span> <span class="c"># or a fixed tag e.g. v1.2.0</span>
+<span class="w">  </span><span class="s">CleanTest</span>
+<span class="w">  </span><span class="s">GIT_REPOSITORY</span><span class="w"> </span><span class="s">https://github.com/clean-test/clean-test.git</span>
+<span class="w">  </span><span class="s">GIT_TAG</span><span class="w">        </span><span class="s">main</span><span class="w"> </span><span class="c"># or a fixed tag e.g. v1.2.0</span>
 <span class="p">)</span>
 <span class="nb">fetchcontent_makeavailable</span><span class="p">(</span><span class="s">CleanTest</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>With this snippet, CMake downloads and integrates a copy of Clean Test in your build directory.
 Consider <a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html">the documentation</a> for further details.</p>
-</div>
-<div class="section" id="customization">
+</section>
+<section id="customization">
 <h4>Customization<a class="headerlink" href="#customization" title="Permalink to this headline">¶</a></h4>
 <p>How Clean Test is built (in any of the above methods) can be configured by CMake options.
 An important, generic setting is <code class="docutils literal notranslate"><span class="pre">CMAKE_BUILD_TYPE</span></code> (which can be used to enable <code class="docutils literal notranslate"><span class="pre">Release</span></code> builds).</p>
@@ -100,21 +101,21 @@ An important, generic setting is <code class="docutils literal notranslate"><spa
 </ul>
 <p>All three booleans are enabled by default.
 How to link against any of the Clean Test libraries is described below.</p>
-</div>
-</div>
-</div>
-<div class="section" id="integration">
+</section>
+</section>
+</section>
+<section id="integration">
 <h2>Integration<a class="headerlink" href="#integration" title="Permalink to this headline">¶</a></h2>
 <p>The Clean Test library comes in two flavors: statically and dynamically (shared) linked.</p>
 <p>Some users consider writing the <code class="docutils literal notranslate"><span class="pre">main</span></code> of a test executable tedious.
 To avoid this, you can also rather link against the <code class="docutils literal notranslate"><span class="pre">main</span></code> library of Clean Test.
 It only contains an extra <code class="docutils literal notranslate"><span class="pre">main</span></code> that forwards to <code class="code cpp docutils literal notranslate"><span class="name"><span class="pre">clean_test</span></span><span class="operator"><span class="pre">::</span></span><span class="name"><span class="pre">main</span></span></code>.</p>
-<div class="section" id="cmake-projects">
+<section id="cmake-projects">
 <h3>CMake Projects<a class="headerlink" href="#cmake-projects" title="Permalink to this headline">¶</a></h3>
 <p>No matter how you obtained Clean Test, the integration is always the same:</p>
-<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">tests</span> <span class="s">test-unit.cpp</span><span class="p">)</span>
-<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">tests</span> <span class="s">PRIVATE</span> <span class="s">CleanTest::main-automatic</span><span class="p">)</span>
-<span class="nb">add_test</span><span class="p">(</span><span class="s">NAME</span> <span class="s">test</span> <span class="s">COMMAND</span> <span class="s">tests</span><span class="p">)</span>
+<div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_executable</span><span class="p">(</span><span class="s">tests</span><span class="w"> </span><span class="s">test-unit.cpp</span><span class="p">)</span>
+<span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">tests</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">CleanTest::main-automatic</span><span class="p">)</span>
+<span class="nb">add_test</span><span class="p">(</span><span class="s">NAME</span><span class="w"> </span><span class="s">test</span><span class="w"> </span><span class="s">COMMAND</span><span class="w"> </span><span class="s">tests</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>This adds the <code class="docutils literal notranslate"><span class="pre">test</span></code> executable to your CMake project.
@@ -124,16 +125,16 @@ If you rather prefer a fixed dependency, simply replace <code class="docutils li
 <p>The <code class="docutils literal notranslate"><span class="pre">main</span></code>-library already contains a top-level <code class="docutils literal notranslate"><span class="pre">main</span></code> entry point.
 If you rather want to implement this yourself, feel free to link against Clean Test (without <code class="docutils literal notranslate"><span class="pre">main</span></code>)
 e.g. <code class="docutils literal notranslate"><span class="pre">CleanTest::shared</span></code>.</p>
-</div>
-<div class="section" id="other-projects">
+</section>
+<section id="other-projects">
 <h3>Other Projects<a class="headerlink" href="#other-projects" title="Permalink to this headline">¶</a></h3>
 <p>The Clean Test core functionality comes both in a dynamically linked library (<code class="docutils literal notranslate"><span class="pre">libcleantest-shared.so</span></code>)
 and a statically linked equivalent (<code class="docutils literal notranslate"><span class="pre">libcleantest-static.a</span></code>).
 Both include all capabilities of Clean Test.
 The optional, default <code class="docutils literal notranslate"><span class="pre">main</span></code> entry point is provided in <code class="docutils literal notranslate"><span class="pre">libcleantest-main-static.a</span></code>.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -152,7 +153,7 @@ The optional, default <code class="docutils literal notranslate"><span class="pr
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Content:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Usage</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
@@ -177,7 +178,7 @@ The optional, default <code class="docutils literal notranslate"><span class="pr
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -196,10 +197,10 @@ The optional, default <code class="docutils literal notranslate"><span class="pr
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020 - 2021, m8mble.
+      &copy;2020 - 2022, m8mble.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

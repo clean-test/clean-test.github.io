@@ -4,11 +4,12 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Clean Test &#8212; Clean Test dev documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -31,34 +32,34 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="clean-test">
+  <section id="clean-test">
 <h1>Clean Test<a class="headerlink" href="#clean-test" title="Permalink to this headline">¶</a></h1>
-<img alt="https://github.com/m8mble/clean-test/actions/workflows/gcc.yml/badge.svg" src="https://github.com/m8mble/clean-test/actions/workflows/gcc.yml/badge.svg" /><img alt="https://github.com/m8mble/clean-test/actions/workflows/clang.yml/badge.svg" src="https://github.com/m8mble/clean-test/actions/workflows/clang.yml/badge.svg" /><img alt="https://github.com/m8mble/clean-test/actions/workflows/doc.yml/badge.svg" src="https://github.com/m8mble/clean-test/actions/workflows/doc.yml/badge.svg" /><img alt="https://img.shields.io/badge/license-BSL--1.0-informational" src="https://img.shields.io/badge/license-BSL--1.0-informational" />
+<img alt="https://github.com/clean-test/clean-test/actions/workflows/gcc.yml/badge.svg" src="https://github.com/clean-test/clean-test/actions/workflows/gcc.yml/badge.svg" /><img alt="https://github.com/clean-test/clean-test/actions/workflows/clang.yml/badge.svg" src="https://github.com/clean-test/clean-test/actions/workflows/clang.yml/badge.svg" /><img alt="https://github.com/clean-test/clean-test/actions/workflows/doc.yml/badge.svg" src="https://github.com/clean-test/clean-test/actions/workflows/doc.yml/badge.svg" /><img alt="https://img.shields.io/badge/license-BSL--1.0-informational" src="https://img.shields.io/badge/license-BSL--1.0-informational" />
 <p>A modern C++-20 unit-testing framework.</p>
 <div class="toctree-wrapper compound">
 </div>
-<div class="section" id="example">
+<section id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>Writing tests is as simple as writing modern, standard C++-20:</p>
-<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;clean-test/clean-test.h&gt;</span><span class="cp"></span>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;clean-test/clean-test.h&gt;</span><span class="cp"></span>
 
-<span class="k">constexpr</span> <span class="k">auto</span> <span class="n">sum</span><span class="p">(</span><span class="k">auto</span><span class="p">...</span> <span class="n">vs</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="mi">0</span> <span class="o">+</span> <span class="p">...</span> <span class="o">+</span> <span class="n">vs</span><span class="p">);</span> <span class="p">}</span>
+<span class="k">constexpr</span><span class="w"> </span><span class="k">auto</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="k">auto</span><span class="p">...</span><span class="w"> </span><span class="n">vs</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vs</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
 
-<span class="k">namespace</span> <span class="n">ct</span> <span class="o">=</span> <span class="n">clean_test</span><span class="p">;</span>
-<span class="k">using</span> <span class="k">namespace</span> <span class="n">ct</span><span class="o">::</span><span class="n">literals</span><span class="p">;</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">ct</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nn">clean_test</span><span class="p">;</span><span class="w"></span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">ct</span><span class="o">::</span><span class="nn">literals</span><span class="p">;</span><span class="w"></span>
 
-<span class="k">auto</span> <span class="k">const</span> <span class="n">suite</span> <span class="o">=</span> <span class="n">ct</span><span class="o">::</span><span class="n">Suite</span><span class="p">{</span><span class="s">&quot;sum&quot;</span><span class="p">,</span> <span class="p">[]</span> <span class="p">{</span>
-    <span class="s">&quot;0&quot;</span><span class="n">_test</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span> <span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="n">_i</span><span class="p">);</span> <span class="p">};</span>
-    <span class="s">&quot;3&quot;</span><span class="n">_test</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span> <span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="n">_i</span><span class="p">);</span> <span class="p">};</span>
-    <span class="s">&quot;A&quot;</span><span class="n">_test</span> <span class="o">=</span> <span class="p">[]</span> <span class="p">{</span> <span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="n">_i</span> <span class="n">and</span> <span class="n">sum</span><span class="p">(</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="n">_i</span><span class="p">);</span> <span class="p">};</span>
-<span class="p">}};</span>
+<span class="k">auto</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">suite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ct</span><span class="o">::</span><span class="n">Suite</span><span class="p">{</span><span class="s">&quot;sum&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;0&quot;</span><span class="n">_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="n">_i</span><span class="p">);</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;3&quot;</span><span class="n">_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="n">_i</span><span class="p">);</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="s">&quot;A&quot;</span><span class="n">_test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">ct</span><span class="o">::</span><span class="n">expect</span><span class="p">(</span><span class="n">sum</span><span class="p">(</span><span class="mi">-1</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">0</span><span class="n">_i</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="n">sum</span><span class="p">(</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="n">_i</span><span class="p">);</span><span class="w"> </span><span class="p">};</span><span class="w"></span>
+<span class="p">}};</span><span class="w"></span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="key-features">
+</section>
+<section id="key-features">
 <h2>Key Features<a class="headerlink" href="#key-features" title="Permalink to this headline">¶</a></h2>
 <p>Although many unit-testing frameworks have been released to date, none combines the following qualities:</p>
-<div class="section" id="macro-free">
+<section id="macro-free">
 <h3>Macro Free<a class="headerlink" href="#macro-free" title="Permalink to this headline">¶</a></h3>
 <p>Macros come with many drawbacks: lack of scoping, difficulty to evolve, debug or understand (just to name a few).
 This often adds up to <em>macro magic</em> which is hardly accessible or discoverable - even for experienced developers.</p>
@@ -68,8 +69,8 @@ In contrast to this most unit-testing frameworks heavily rely on macros, particu
 The resulting <a class="reference internal" href="expressions.html"><span class="doc">expression introspection</span></a> is highly superior
 (<code class="code cpp docutils literal notranslate"><span class="keyword"><span class="pre">constexpr</span></span></code>, supports short circuiting).
 The few <a class="reference internal" href="notions.html"><span class="doc">notions of the framework</span></a> are very easy to discover for any C++ developer.</p>
-</div>
-<div class="section" id="parallel">
+</section>
+<section id="parallel">
 <h3>Parallel<a class="headerlink" href="#parallel" title="Permalink to this headline">¶</a></h3>
 <p>Modern hardware comes with multi-CPU architectures and many C++-programs make use of these.
 However, the existing frameworks can only execute the corresponding unit-tests sequentially.</p>
@@ -77,8 +78,8 @@ However, the existing frameworks can only execute the corresponding unit-tests s
 This helps to execute tests more quickly and to identify issues with thread-safety already during testing.</p>
 <p>The assertions of Clean Test are thread-safe i.e. simultaneous failures of one assertion can be detected.
 This thread safety particularly applies to parallel tests (e.g. based on <code class="docutils literal notranslate"><span class="pre">asio</span></code> or some thread pool).</p>
-</div>
-<div class="section" id="production-ready">
+</section>
+<section id="production-ready">
 <h3>Production Ready<a class="headerlink" href="#production-ready" title="Permalink to this headline">¶</a></h3>
 <p>Clean Test provides all the utilities expected from a unit-testing framework:
 It has no dependencies and as a CMake library is very easy to build and integrate.</p>
@@ -88,9 +89,9 @@ Many details can be specified dynamically e.g. test selection, execution context
 With the support of JUnit XML-reports (the most common format) any CI-engine can display error details and statistics.
 Clean Test guarantees valid UTF-8 output, thus allowing for assertions with arbitrary byte-sequences.
 The necessary escaping is done automatically, if necessary.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -109,7 +110,7 @@ The necessary escaping is done automatically, if necessary.</p>
 
 
 <h3>Navigation</h3>
-<p class="caption"><span class="caption-text">Content:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Content:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notions.html">Quickstart</a></li>
@@ -129,7 +130,7 @@ The necessary escaping is done automatically, if necessary.</p>
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -148,10 +149,10 @@ The necessary escaping is done automatically, if necessary.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2020 - 2021, m8mble.
+      &copy;2020 - 2022, m8mble.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.5.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
